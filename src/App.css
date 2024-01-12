@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Space+Mono&display=swap");
+
+.header-clamp {
+    font-size: clamp(10px, 15vw, 60px);
+}
+
+.text-clamp {
+    font-size: clamp(8px, 5vw, 20px);
+}

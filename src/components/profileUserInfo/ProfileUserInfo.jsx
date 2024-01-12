@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 
-function ProfileUserInfo() {
+function ProfileUserInfo({ user }) {
   return (
-    <div>ProfileUserInfo</div>
-  )
+    <>
+      <img
+        src="https://static.thenounproject.com/png/526867-200.png"
+        alt="generic"
+      />
+      <p>{user.name}</p>
+      <p>{user.email}</p>
+    </>
+  );
 }
 
-export default ProfileUserInfo
+export default ProfileUserInfo;

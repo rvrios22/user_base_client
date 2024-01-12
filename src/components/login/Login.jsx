@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import "./login.css";
 
 function Login() {
-  const [user, setUser] = useState({ email: "rr@mail.com", password: "pass" });
+  const [user, setUser] = useState({ email: "", password: "" });
   const navigate = useNavigate();
 
   const requestOptions = {
@@ -44,6 +45,7 @@ function Login() {
         console.log(payload);
         const token = payload.data.token;
         setTokenToLocalStorage(token);
+        navigate("/profile");
       })
       .catch((err) => {
         console.error(err);
@@ -52,10 +54,9 @@ function Login() {
   };
 
   return (
-    <>
-      <h1>Welcome Back!</h1>
-      <p>Please Login</p>
-      <form action="POST">
+    <main>
+      <h1 className="login-header header-clamp">Welcome to Your Budget Tool!</h1>
+      <form action="POST" className="login-form text-clamp">
         <label htmlFor="email">Email: </label>
         <input
           type="text"
@@ -74,12 +75,17 @@ function Login() {
           onChange={handlePasswordChannge}
           required
         />
-        <input type="submit" value="Login" onClick={handleSubmit} />
+        <input
+          className="login-button"
+          type="submit"
+          value="Login"
+          onClick={handleSubmit}
+        />
       </form>
       <p>
         Don't have an account? Sign up <Link to="/signup">here</Link>
       </p>
-    </>
+    </main>
   );
 }
 

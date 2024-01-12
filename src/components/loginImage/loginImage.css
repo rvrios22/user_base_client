@@ -1,0 +1,7 @@
+.login-image {
+    margin: 0 auto;
+    object-fit: cover;
+    opacity: .5;
+    border-radius: 10px;
+    width: 50%;
+}

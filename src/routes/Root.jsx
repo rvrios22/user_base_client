@@ -6,9 +6,9 @@ import Footer from "../components/footer/Footer";
 function Root() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
